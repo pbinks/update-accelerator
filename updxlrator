@@ -187,7 +187,16 @@ while (<>) {
         $xlrator_url = &check_cache($source_url,$hostaddr,$username,"Avast",$mirror);
     }
     
-    
+    # -----------------------------------------------------------
+	#  Section: AVG Downloads
+	# -----------------------------------------------------------
+
+	if ($source_url =~ m@^http://.*\.avg\.com/.*\.(exe|bin|ctf)$@i)
+	{
+        $xlrator_url = &check_cache($source_url,$hostaddr,$username,"Avg",$mirror);
+	}
+
+
 # 	To add a new set of updates to be cached, change the <vendor> and
 # 	<vendorwebsite> placeholders as well as file URLs and types
 # 	in this section of the file after copying this template:
